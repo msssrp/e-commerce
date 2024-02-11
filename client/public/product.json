@@ -1,0 +1,82 @@
+[
+  {
+    "_id": 1,
+    "name": "Software Engineer Mug",
+    "price": 12.99,
+    "image": "https://i.etsystatic.com/23637776/r/il/99af25/3129621032/il_570xN.3129621032_8wkg.jpg",
+    "description": "A stylish mug for software engineers, perfect for your morning coffee or tea.",
+    "category": "popular"
+  },
+  {
+    "_id": 2,
+    "name": "Debugging T-shirt",
+    "price": 19.99,
+    "image": "https://images.squarespace-cdn.com/content/v1/61448910c1763233f3a59e1d/1679368719520-8A75R80230PTZNI3EU14/unisex-staple-t-shirt-black-heather-front-641922097a574.jpg",
+    "description": "A comfortable t-shirt featuring a funny debugging-themed print, ideal for casual wear.",
+    "category": "Clothing"
+  },
+  {
+    "_id": 3,
+    "name": "Code Ninja Hoodie",
+    "price": 34.99,
+    "image": "https://m.media-amazon.com/images/I/B1i3u9-Q-KS._CLa%7C2140%2C2000%7CB1fDqNOZPuS.png%7C0%2C0%2C2140%2C2000%2B0.0%2C0.0%2C2140.0%2C2000.0_AC_UY1000_.png",
+    "description": "A comfortable hoodie with a sleek 'Code Ninja' design, perfect for chilly coding sessions.",
+    "category": "popular"
+  },
+  {
+    "_id": 4,
+    "name": "Programmer's Keyboard Stickers",
+    "price": 8.99,
+    "image": "https://m.media-amazon.com/images/W/MEDIAX_792452-T2/images/I/51bPjebAE7L.jpg",
+    "description": "A set of high-quality keyboard stickers featuring programming symbols and shortcuts, designed to enhance your typing experience.",
+    "category": "Swag"
+  },
+  {
+    "_id": 5,
+    "name": "Developer's Smartwatch",
+    "price": 129.99,
+    "image": "https://www.jewellermagazine.com/Img/76003",
+    "description": "A sleek and feature-packed smartwatch tailored for developers, with built-in productivity tools, code snippets, and integrations with popular development platforms.",
+    "category": "popular"
+  },
+  {
+    "_id": 6,
+    "name": "Codebase Candle Set",
+    "price": 16.99,
+    "image": "https://i.etsystatic.com/44186829/r/il/8845c6/5559735761/il_fullxfull.5559735761_a030.jpg",
+    "description": "A set of scented candles inspired by the aroma of a freshly compiled codebase, perfect for creating a cozy coding atmosphere.",
+    "category": "popular"
+  },
+  {
+    "_id": 7,
+    "name": "Coding Socks",
+    "price": 9.99,
+    "image": "https://i.etsystatic.com/25401748/r/il/72b438/3943682388/il_570xN.3943682388_4n1v.jpg",
+    "description": "A fun pair of socks with coding patterns, keeping your feet warm while coding.",
+    "category": "Clothing"
+  },
+  {
+    "_id": 8,
+    "name": "Code Compiler Backpack",
+    "price": 49.99,
+    "image": "https://ih1.redbubble.net/image.1870025909.1318/ur,backpack_front,square,600x600.jpg",
+    "description": "A durable and spacious backpack equipped with compartments for laptops, tablets, and coding essentials, designed for developers on the go.",
+    "category": "popular"
+  },
+  {
+    "_id": 9,
+    "name": "Developer's Desk Organizer",
+    "price": 29.99,
+    "image": "https://cdn.autonomous.ai/static/upload/images/common/upload/20210909/15-Essentials-You-Will-Need-For-a-Developer-Desk_75d0af6d59a.jpg",
+    "description": "A stylish desk organizer featuring compartments for pens, sticky notes, and other essentials, designed with developers in mind.",
+    "category": "Swag"
+  },
+  {
+    "_id": 10,
+    "name": "Code Syntax Poster",
+    "price": 14.99,
+    "image": "https://vintagecomputer.ca/wp-content/uploads/2018/09/Syntax-FullPoster.jpg",
+    "description": "A poster illustrating common code syntax in a sleek and minimalist design, perfect for decorating your workspace.",
+    "category": "popular"
+  }
+]
