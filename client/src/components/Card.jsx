@@ -9,15 +9,17 @@ const Card = ({ item }) => {
   return (
     <div className="card shadow-md relative mr-5 md:my-5">
       <div
-        className="rating gap-1 right-2 top-2 absolute p-4 heartStar bg-red"
-        onClick={handlerHeartClick}>
+        className="rating z-[1000] gap-1 right-2 top-2 absolute p-4 heartStar bg-red"
+        onClick={handlerHeartClick}
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill={`${isHeartFilled ? "white" : "none"}`}
           viewBox="0 0 24 24"
           strokeWidth={1.5}
           stroke="currentColor"
-          className="w-6 h-6 cursor-pointer">
+          className="w-6 h-6 cursor-pointer"
+        >
           <path
             strokeLinecap="round"
             strokeLinejoin="round"
