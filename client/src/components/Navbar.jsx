@@ -1,6 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
+import Modal from "./Modal";
+import { AuthContext } from "../context/AuthProvider";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
+  const { user, createUser } = useContext(AuthContext);
   const navItems = (
     <>
       <li>
@@ -55,13 +59,15 @@ const Navbar = () => {
               <div
                 tabIndex={0}
                 role="button"
-                className="btn btn-ghost lg:hidden">
+                className="btn btn-ghost lg:hidden"
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="h-5 w-5"
                   fill="none"
                   viewBox="0 0 24 24"
-                  stroke="currentColor">
+                  stroke="currentColor"
+                >
                   <path
                     strokeLinecap="round"
                     strokeLinejoin="round"
@@ -72,14 +78,15 @@ const Navbar = () => {
               </div>
               <ul
                 tabIndex={0}
-                className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+                className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+              >
                 {navItems}
               </ul>
             </div>
-            <a className="btn btn-ghost text-xl">
+            <Link to={"/"} className="btn btn-ghost text-xl">
               <img src="/logo.png" alt="" className="h-12 pr-1 mx-auto" />
               <p className="text-red">SE</p> Souvenir Shop
-            </a>
+            </Link>
           </div>
           <div className="navbar-center hidden lg:flex">
             <ul className="menu menu-horizontal px-1">{navItems}</ul>
@@ -91,7 +98,8 @@ const Navbar = () => {
                 className="h-5 w-5"
                 fill="none"
                 viewBox="0 0 24 24"
-                stroke="currentColor">
+                stroke="currentColor"
+              >
                 <path
                   strokeLinecap="round"
                   strokeLinejoin="round"
@@ -103,14 +111,16 @@ const Navbar = () => {
             <div
               tabIndex={0}
               role="button"
-              className="btn btn-ghost btn-circle hidden lg:flex justify-center items-center mr-2">
+              className="btn btn-ghost btn-circle hidden lg:flex justify-center items-center mr-2"
+            >
               <div className="indicator">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="h-5 w-5"
                   fill="none"
                   viewBox="0 0 24 24"
-                  stroke="currentColor">
+                  stroke="currentColor"
+                >
                   <path
                     strokeLinecap="round"
                     strokeLinejoin="round"
@@ -121,21 +131,22 @@ const Navbar = () => {
                 <span className="badge badge-sm indicator-item">8</span>
               </div>
             </div>
-            <a className="btn bg-red rounded-full px-5 text-white flex items-center gap-2">
+            <button
+              className="btn bg-red rounded-full px-5 text-white flex items-center gap-2"
+              onClick={() => document.getElementById("login").showModal()}
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
                 fill="currentColor"
-                className="w-6 h-6">
-                <path
-                  fillRule="evenodd"
-                  d="M5.337 21.718a6.707 6.707 0 0 1-.533-.074.75.75 0 0 1-.44-1.223 3.73 3.73 0 0 0 .814-1.686c.023-.115-.022-.317-.254-.543C3.274 16.587 2.25 14.41 2.25 12c0-5.03 4.428-9 9.75-9s9.75 3.97 9.75 9c0 5.03-4.428 9-9.75 9-.833 0-1.643-.097-2.417-.279a6.721 6.721 0 0 1-4.246.997Z"
-                  clipRule="evenodd"
-                />
+                className="w-6 h-6"
+              >
+                <path d="M4.5 6.375a4.125 4.125 0 1 1 8.25 0 4.125 4.125 0 0 1-8.25 0ZM14.25 8.625a3.375 3.375 0 1 1 6.75 0 3.375 3.375 0 0 1-6.75 0ZM1.5 19.125a7.125 7.125 0 0 1 14.25 0v.003l-.001.119a.75.75 0 0 1-.363.63 13.067 13.067 0 0 1-6.761 1.873c-2.472 0-4.786-.684-6.76-1.873a.75.75 0 0 1-.364-.63l-.001-.122ZM17.25 19.128l-.001.144a2.25 2.25 0 0 1-.233.96 10.088 10.088 0 0 0 5.06-1.01.75.75 0 0 0 .42-.643 4.875 4.875 0 0 0-6.957-4.611 8.586 8.586 0 0 1 1.71 5.157v.003Z" />
               </svg>
-              Contract
-            </a>
+              Login
+            </button>
           </div>
+          <Modal name={"login"} />
         </div>
       </div>
     </header>
