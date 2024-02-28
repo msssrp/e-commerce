@@ -69,8 +69,7 @@ const SignUp = () => {
             Already have an account?{" "}
             <button
               className="text-red underline"
-              onClick={() => document.getElementById("login").showModal()}
-            >
+              onClick={() => document.getElementById("login").showModal()}>
               Sign In Now
             </button>
           </p>

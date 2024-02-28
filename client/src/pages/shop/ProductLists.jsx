@@ -95,8 +95,7 @@ const ProductLists = () => {
                 onClick={() => filterItem(category)}
                 className={`px-4 py-2 rounded-full ${
                   selected === category && "active"
-                }`}
-              >
+                }`}>
                 <p className="capitalize">{category}</p>
               </button>
             ))}
@@ -107,8 +106,7 @@ const ProductLists = () => {
                 id="sort"
                 className="bg-black text-white px-2 rounded-sm"
                 onChange={(e) => handlerSortChange(e.target.value, filterItems)}
-                value={sortOption}
-              >
+                value={sortOption}>
                 <option value="default">Default</option>
                 <option value="A-Z">A-Z</option>
                 <option value="Z-A">Z-A</option>
@@ -134,8 +132,7 @@ const ProductLists = () => {
               onClick={() => paginate(index + 1)}
               className={`mx-1 px-3 py-1 rounded-full ${
                 currentPage === index + 1 ? "bg-red text-white" : "bg-gray-200"
-              }`}
-            >
+              }`}>
               {index + 1}
             </button>
           ))}

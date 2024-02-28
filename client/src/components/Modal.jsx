@@ -1,10 +1,10 @@
 import React, { useContext } from "react";
-import { Link } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
 import { FaFacebook } from "react-icons/fa";
 import { ImGithub } from "react-icons/im";
 import { useForm } from "react-hook-form";
 import { AuthContext } from "../context/AuthProvider";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 const Modal = ({ name }) => {
   const { login, signUpWithGoogle } = React.useContext(AuthContext);
   const {
@@ -13,13 +13,17 @@ const Modal = ({ name }) => {
     watch,
     formState: { errors },
   } = useForm();
-
+  const location = useLocation();
+  const navigate = useNavigate();
+  const from = "/shop";
   const onSubmit = (data) => {
     login(data.email, data.password)
       .then((resp) => {
         const user = resp.user;
         console.log(user);
         alert("Login successfully");
+        document.getElementById("login").close();
+        navigate(from, { replace: true });
       })
       .catch((error) => {
         console.log(error);
@@ -89,16 +93,14 @@ const Modal = ({ name }) => {
             <button
               htmlFor={name}
               className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2"
-              onClick={() => document.getElementById(name).close()}
-            >
+              onClick={() => document.getElementById(name).close()}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
                 strokeWidth={1.5}
                 stroke="currentColor"
-                className="w-6 h-6"
-              >
+                className="w-6 h-6">
                 <path
                   strokeLinecap="round"
                   strokeLinejoin="round"
