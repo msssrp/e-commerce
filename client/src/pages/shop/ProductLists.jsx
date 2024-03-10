@@ -9,6 +9,7 @@ const ProductLists = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [itemPerPage, setItemPerPage] = useState(8);
   const [categories, setCategories] = useState([]);
+
   useEffect(() => {
     const fetchData = async () => {
       const resp = await fetch("http://localhost:8080/products");

@@ -31,6 +31,10 @@ const swaggerDefinition = {
     title: "RestFul API for Mern shop",
     version: "1.0.0",
   },
+  externalDocs: {
+    description: "Download swagger.json",
+    url: "/swagger.json",
+  },
   servers: [
     {
       url: "http://localhost:8080",
@@ -38,6 +42,11 @@ const swaggerDefinition = {
     },
   ],
 };
+
+app.get("/swagger.json", (req, res) => {
+  res.header("Content-Type", "application/json");
+  res.send(swaggerSpec);
+});
 
 const options = {
   swaggerDefinition,
@@ -50,6 +59,8 @@ app.use("/docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 const productRoute = require("./routes/product.route");
 app.use("/products", productRoute);
 
+const cartRoute = require("./routes/cart.route");
+app.use("/carts", cartRoute);
 app.listen(PORT, () => {
   console.log(`server running at ${PORT}`);
 });

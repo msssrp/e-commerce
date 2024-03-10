@@ -6,6 +6,8 @@ import SignUp from "../components/SignUp";
 import UpdateProfile from "../pages/dashboard/UpdateProfile";
 
 import ProtectedRoute from "./ProtectedRoute";
+import CartTable from "../components/CartTable";
+import Cart from "../layout/Cart";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -26,6 +28,16 @@ const router = createBrowserRouter([
       {
         path: "/updateProfile",
         element: <UpdateProfile />,
+      },
+    ],
+  },
+  {
+    path: "/cart",
+    element: <Cart />,
+    children: [
+      {
+        path: "/cart",
+        element: <CartTable />,
       },
     ],
   },

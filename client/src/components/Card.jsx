@@ -1,25 +1,66 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
+import { AuthContext } from "../context/AuthProvider";
+import axios from "axios";
 const Card = ({ item }) => {
   const { _id, name, image, price, description } = item;
   const [isHeartFilled, setIsHeartFilled] = useState(false);
+  const { user, setCartTrigger, cartTrigger } = useContext(AuthContext);
   const handlerHeartClick = () => {
     setIsHeartFilled(!isHeartFilled);
+  };
+
+  const handlerAddtoCart = async (item) => {
+    const cartItem = {
+      productId: item._id,
+      name: item.name,
+      email: user.email,
+      price: item.price,
+      image: item.image,
+      quantity: 1,
+    };
+    console.log(cartItem);
+    if (user && user.email) {
+      axios
+        .post("http://localhost:8080/carts", cartItem)
+        .then(() => {
+          Swal.fire({
+            title: "Product added in cart",
+            position: "center",
+            icon: "success",
+            showConfirmButton: false,
+            timer: 1500,
+          });
+          setCartTrigger(cartTrigger + 1);
+        })
+        .catch(() => {
+          Swal.fire({
+            title: "Please login before add product to cart",
+            position: "center",
+            icon: "warning",
+            showCancelButton: true,
+            showConfirmButton: false,
+            confirmButtonText: "Login now",
+            confirmButtonColor: "#3085D6",
+            cancelButtonColor: "#D33",
+            timer: 1500,
+          });
+        });
+    }
   };
   return (
     <div className="card shadow-md relative mr-5 md:my-5">
       <div
         className="rating z-[1000] gap-1 right-2 top-2 absolute p-4 heartStar bg-red"
-        onClick={handlerHeartClick}
-      >
+        onClick={handlerHeartClick}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill={`${isHeartFilled ? "white" : "none"}`}
           viewBox="0 0 24 24"
           strokeWidth={1.5}
           stroke="currentColor"
-          className="w-6 h-6 cursor-pointer"
-        >
+          className="w-6 h-6 cursor-pointer">
           <path
             strokeLinecap="round"
             strokeLinejoin="round"
@@ -45,7 +86,11 @@ const Card = ({ item }) => {
         </div>
         <div className="card-actions justify-between items-center mt-2">
           <h5 className="font-semibold">{price}</h5>
-          <button className="btn bg-red text-white">Add to cart</button>
+          <button
+            className="btn bg-red text-white"
+            onClick={() => handlerAddtoCart(item)}>
+            Add to cart
+          </button>
         </div>
       </div>
     </div>
